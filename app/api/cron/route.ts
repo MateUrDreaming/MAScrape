@@ -41,13 +41,7 @@ export async function GET(request: Request) {
                     }
                 }
 
-                // Assuming 'product' is the object you're trying to access
-                if (product && product.price !== undefined) {
-                    // Safe to access product.price
-                    console.log(product.price);
-                } else {
-                    console.error('Product or price is undefined');
-                }
+                
 
                 const updatedProduct = await Product.findOneAndUpdate(
                     {
