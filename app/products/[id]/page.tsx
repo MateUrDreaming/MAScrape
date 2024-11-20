@@ -16,13 +16,13 @@ import Modal from '@/components/Modal';
 
 
 type Props = {
-  params: { id: string }
+	params: { id: string }
 }
 
 
 
 const page = async ({ params }: Props) => {
-    const { id } = await params;
+    const { id } = params;
     const product: Product = await getProductById(id);
     
 	if(!product) redirect('/')
