@@ -15,14 +15,12 @@ import ProductCard from '@/components/ProductCard';
 import Modal from '@/components/Modal';
 
 
-type Props = {
-	params: { id: string }
-}
+type Params = Promise<{ id: string }> 
 
 
 
-const page = async ({ params }: Props) => {
-    const { id } = params;
+const page = async ({ params }: { params: Params}) => {
+    const { id } = await params;
     const product: Product = await getProductById(id);
     
 	if(!product) redirect('/')
